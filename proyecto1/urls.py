@@ -23,4 +23,6 @@ from appfamiliares import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),  # Ruta para la vista index de appfamiliares
+    path('lista_familiares/', views.lista_familiares, name='lista_familiares'),  # Ruta para la lista de familiares
+    path('detalle_familiar/<int:id>/', views.detalle_familiar, name='detalle_familiar'),  # Ruta para el detalle de un familiar
 ]
