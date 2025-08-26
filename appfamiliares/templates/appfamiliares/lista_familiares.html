@@ -1,13 +1,16 @@
-{% extends 'bappfamiliares/base.html' %}
+{% extends 'appfamiliares/base.html' %}
 
 {% block title %}
 Listado de Familiares
 {% endblock title %}
 
+{% block content_title %}
+{{ titulo }}
+{% endblock content_title %}
+
 {% block content %}
 <div class="p-4 gap-4 py-md-5 align-items-center justify-content-center" bis_skin_checked="1">
     {# Assuming 'familiares' is a list of familiar objects passed to the template #}
-    <h1>{{ titulo }}</h1>
     <div class="list-group" bis_skin_checked="1">
         {% for familiar in familiares %}
         <a href="{% url 'detalle_familiar' familiar.id %}"
