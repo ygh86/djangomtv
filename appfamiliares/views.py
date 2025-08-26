@@ -2,12 +2,6 @@ from django.shortcuts import render
 from .models import Familiares
 
 # Create your views here.
-def index(request):
-    context = {
-        'titulo': 'App de Familiares',
-        'mensaje': 'Bienvenido a la sección de Familiares'
-    }
-    return render(request, 'appfamiliares/index.html',context)
 
 def lista_familiares(request):
     familiares = Familiares.objects.all()

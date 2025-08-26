@@ -1,4 +1,4 @@
-{% extends 'appfamiliares/base.html' %}
+{% extends 'Main/base.html' %}
 
 {% block title %}
 App Familiares
@@ -10,7 +10,7 @@ App Familiares
     <div class="col-lg-6 mx-auto" bis_skin_checked="1">
         <p class="lead mb-4">{{ mensaje }}</p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center" bis_skin_checked="1">
-            <a href="/lista_familiares" class="btn btn-primary btn-lg px-4 gap-3">Ver listado de Familiares</a>
+            <a href="{% url 'appfamiliares:lista_familiares' %}" class="btn btn-primary btn-lg px-4 gap-3">Ver listado de Familiares</a>
         </div>
     </div>
 </div>

@@ -1,4 +1,4 @@
-{% extends 'appfamiliares/base.html' %}
+{% extends 'Main/base.html' %}
 
 {% block title %}
 Detalle del familiar
@@ -17,6 +17,6 @@ Detalle del familiar
             <p>Fecha de Nacimiento: {{ familiar.fecha_nacimiento }}</p>
         </div>
     </div>
-    <a href="/lista_familiares" class="btn btn-primary mt-3">Volver a la lista de Familiares</a>
+    <a href="{% url 'appfamiliares:lista_familiares' %}" class="btn btn-primary mt-3">Volver a la lista de Familiares</a>
 </div>
 {% endblock content %}
