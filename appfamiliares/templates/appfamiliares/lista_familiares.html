@@ -1,46 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
+{% block title %}
+Listado de Familiares
+{% endblock title %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de Familiares</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-</head>
-
-<body>
-    <article class="container">
-        <div class="p-4 gap-4 py-md-5 align-items-center justify-content-center" bis_skin_checked="1">
-            {# Assuming 'familiares' is a list of familiar objects passed to the template #}
-            <h1>{{ titulo }}</h1>
-            <div class="list-group" bis_skin_checked="1">
-                {% for familiar in familiares %}
-                <a href="{% url 'detalle_familiar' familiar.id %}" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                    aria-current="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                        class="bi bi-person-vcard" viewBox="0 0 16 16">
-                        <path
-                            d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4m4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5M9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8m1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5" />
-                        <path
-                            d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96q.04-.245.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1 1 0 0 1 1 12z" />
-                    </svg>
-                    <div class="d-flex gap-2 w-100 justify-content-between" bis_skin_checked="1">
-                        <div bis_skin_checked="1">
-                            <h2 class="mb-0">{{ familiar.nombre }}</h2>
-                            <p class="mb-0">Parentesco: {{ familiar.parentesco }}</p>
-                            <p class="mb-0">Fecha de Nacimiento: {{ familiar.fecha_nacimiento }}</p>
-                        </div>
-                    </div>
-                </a>
-                {% endfor %}
+{% block content %}
+<div class="p-4 gap-4 py-md-5 align-items-center justify-content-center" bis_skin_checked="1">
+    {# Assuming 'familiares' is a list of familiar objects passed to the template #}
+    <h1>{{ titulo }}</h1>
+    <div class="list-group" bis_skin_checked="1">
+        {% for familiar in familiares %}
+        <a href="{% url 'detalle_familiar' familiar.id %}"
+            class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                class="bi bi-person-vcard" viewBox="0 0 16 16">
+                <path
+                    d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4m4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5M9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8m1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5" />
+                <path
+                    d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96q.04-.245.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1 1 0 0 1 1 12z" />
+            </svg>
+            <div class="d-flex gap-2 w-100 justify-content-between" bis_skin_checked="1">
+                <div bis_skin_checked="1">
+                    <h2 class="mb-0">{{ familiar.nombre }}</h2>
+                    <p class="mb-0">Parentesco: {{ familiar.parentesco }}</p>
+                    <p class="mb-0">Fecha de Nacimiento: {{ familiar.fecha_nacimiento }}</p>
+                </div>
             </div>
-            <a href="/" class="btn btn-primary mt-3">Volver al Inicio</a>
-        </div>
-    </article>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-        crossorigin="anonymous"></script>
-</body>
-
-</html>
+        </a>
+        {% endfor %}
+    </div>
+    <a href="/" class="btn btn-primary mt-3">Volver al Inicio</a>
+</div>
+{% endblock content %}
